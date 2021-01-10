@@ -30,8 +30,10 @@ $pryColor: #4b5320;
         max-width: 90vw;
         background-color: #f8f8f8;
         padding: 40px 20px;
+        box-shadow: 0 0.4px 50px rgba($color: #000, $alpha: 0.1);
         .download {
           color: #000;
+          margin-top: 40px !important;
           a {
             background-color: #4b5320;
             height: 40px;

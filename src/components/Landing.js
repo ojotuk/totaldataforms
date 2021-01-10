@@ -129,25 +129,11 @@ const Landing = () => {
           <div className={styles.formArea}>
             <div className={styles.content}>
               <div className={styles.form}>
-                <div className={styles.download}>
-                  <p>
-                    No Tax Card ?{" "}
-                    <a
-                      href="https://drive.google.com/file/d/15u-3CjqSy4-lfCKM6-OIzUY4dh3CZWwh/view?usp=sharing"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <button>
-                        <i className={"fa fa-download"}></i>Download Now
-                      </button>
-                    </a>
-                  </p>
-                </div>
                 <div className={styles.item}>
                   <i className={"fa fa-id-card-o"}></i>
                   <input
                     type="text"
-                    placeholder="Staff Id (optional)"
+                    placeholder="Staff Id "
                     value={inputs.taxNo}
                     onChange={(e) => handleChange("taxNo", e)}
                     maxLength={30}
@@ -196,6 +182,20 @@ const Landing = () => {
                 <div className={styles.item} onClick={handleSubmit}>
                   <i className={"fa fa-check"}></i>
                   <input type="submit" />
+                </div>
+                <div className={styles.download + " mt-3"}>
+                  <p>
+                    No Tax Card ?{" "}
+                    <a
+                      href="https://drive.google.com/file/d/15u-3CjqSy4-lfCKM6-OIzUY4dh3CZWwh/view?usp=sharing"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <button>
+                        <i className={"fa fa-download"}></i>Download Now
+                      </button>
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
