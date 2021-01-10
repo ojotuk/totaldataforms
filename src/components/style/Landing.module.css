@@ -1,0 +1,170 @@
+.header {
+  padding: 20px 0;
+}
+
+.header img {
+  width: 200px;
+}
+
+.main {
+  background-color: #4b5320;
+  min-height: 100vh;
+  color: white;
+  padding: 80px 0;
+}
+
+.main .title {
+  padding: 10px 0;
+}
+
+.main .title h1 {
+  font-size: 24px;
+}
+
+.main .title p {
+  margin: 20px 0;
+}
+
+.main .formArea .content {
+  padding: 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .formArea .content .form {
+  width: 400px;
+  max-width: 90vw;
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+}
+
+.main .formArea .content .form .download {
+  color: #000;
+}
+
+.main .formArea .content .form .download a {
+  background-color: #4b5320;
+  height: 40px;
+  width: 190px;
+}
+
+.main .formArea .content .form .item {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-radius: 1px solid #4b5320;
+}
+
+.main .formArea .content .form .item i {
+  width: 40px;
+  background-color: #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #4b5320;
+}
+
+.main .formArea .content .form .item input {
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.main .formArea .content .form .item input[type="submit"] {
+  background: #4b5320;
+  color: white;
+}
+
+.main .formArea .content .form .item input[type="submit"]:hover {
+  background: #6c782e;
+}
+
+.admin {
+  min-height: 100vh !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.admin .header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin .header .container button {
+  background-color: #4b5320;
+  color: white;
+  height: 40px;
+  width: 100px;
+  border: none;
+  outline: none;
+}
+
+.admin .downloadArea {
+  background-color: #4b5320;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.admin .downloadArea .requestBtn,
+.admin .downloadArea button {
+  background-color: white;
+  width: 300px;
+  max-width: 90vw;
+  margin: 0 auto;
+  height: 40px;
+  border: none;
+  color: #4b5320;
+  font-size: 16px;
+}
+
+.admin .downloadArea .downloadBtn {
+  background-color: white;
+  width: 300px;
+  max-width: 90vw;
+  margin: 0 auto;
+  height: 40px;
+  border: none;
+  color: #4b5320;
+  font-size: 16px;
+  margin-top: 30px;
+}
+/*# sourceMappingURL=Landing.module.css.map */

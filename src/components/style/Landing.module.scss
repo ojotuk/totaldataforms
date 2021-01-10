@@ -1,0 +1,123 @@
+$pryColor: #4b5320;
+
+.header {
+  padding: 20px 0;
+  img {
+    width: 200px;
+  }
+}
+.main {
+  background-color: $pryColor;
+  min-height: 100vh;
+  color: white;
+  padding: 80px 0;
+  .title {
+    padding: 10px 0;
+    h1 {
+      font-size: 24px;
+    }
+    p {
+      margin: 20px 0;
+    }
+  } //title
+  .formArea {
+    .content {
+      padding: 20px 10px;
+      display: flex;
+      justify-content: center;
+      .form {
+        width: 400px;
+        max-width: 90vw;
+        background-color: #f8f8f8;
+        padding: 40px 20px;
+        .download {
+          color: #000;
+          a {
+            background-color: #4b5320;
+            height: 40px;
+            width: 190px;
+          }
+        }
+        .item {
+          height: 40px;
+          display: flex;
+          border-radius: 12px;
+          margin-bottom: 20px;
+          border-radius: 1px solid $pryColor;
+          i {
+            width: 40px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $pryColor;
+          } //
+          input {
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            flex: 1;
+          }
+          input[type="submit"] {
+            background: $pryColor;
+            color: white;
+            &:hover {
+              background: lighten($color: $pryColor, $amount: 10);
+            }
+          }
+        } //item
+      }
+    }
+  }
+}
+
+////admin
+.admin {
+  min-height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  .header {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        background-color: $pryColor;
+        color: white;
+        height: 40px;
+        width: 100px;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+  .downloadArea {
+    background-color: #4b5320;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .requestBtn,
+    button {
+      background-color: white;
+      width: 300px;
+      max-width: 90vw;
+      margin: 0 auto;
+      height: 40px;
+      border: none;
+      color: #4b5320;
+      font-size: 16px;
+    }
+    .downloadBtn {
+      background-color: white;
+      width: 300px;
+      max-width: 90vw;
+      margin: 0 auto;
+      height: 40px;
+      border: none;
+      color: #4b5320;
+      font-size: 16px;
+      margin-top: 30px;
+    }
+  }
+}
