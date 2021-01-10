@@ -4,7 +4,6 @@ import logo from "./style/total data logo.webp";
 import axios from "axios";
 import Notification from "./Notification";
 import Loader from "./Loader";
-import { Link } from "react-router-dom";
 const Landing = ({ setIslogged }) => {
   const [inputs, setInput] = useState({
     taxNo: "",

@@ -135,6 +135,7 @@ const Landing = () => {
                     <a
                       href="https://drive.google.com/file/d/15u-3CjqSy4-lfCKM6-OIzUY4dh3CZWwh/view?usp=sharing"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <button>
                         <i className={"fa fa-download"}></i>Download Now

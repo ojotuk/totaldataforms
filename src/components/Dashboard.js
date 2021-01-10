@@ -62,11 +62,7 @@ const Dashboard = ({ setIslogged }) => {
         </div>
       </header>
       <section className={styles.downloadArea}>
-        <button
-          className={"btn"}
-          className={styles.requestBtn}
-          onClick={requesthandler}
-        >
+        <button className={"btn " + styles.requestBtn} onClick={requesthandler}>
           Request Data
         </button>
         {data ? (
