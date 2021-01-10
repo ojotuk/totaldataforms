@@ -132,7 +132,10 @@ const Landing = () => {
                 <div className={styles.download}>
                   <p>
                     No Tax Card ?{" "}
-                    <a href="/">
+                    <a
+                      href="https://drive.google.com/file/d/15u-3CjqSy4-lfCKM6-OIzUY4dh3CZWwh/view?usp=sharing"
+                      target="_blank"
+                    >
                       <button>
                         <i className={"fa fa-download"}></i>Download Now
                       </button>
