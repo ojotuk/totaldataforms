@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./style/Landing.module.css";
-import logo from "./style/total data logo.webp";
+// import logo from "./style/total data logo.webp";
 import axios from "axios";
 import Notification from "./Notification";
 import Loader from "./Loader";
