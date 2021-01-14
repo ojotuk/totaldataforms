@@ -82,7 +82,7 @@ const Landing = ({ match }) => {
     setState(true);
     // https://total-data-feeds.herokuapp.com
     axios
-      .post("http://localhost:5000/pension/add-user", data)
+      .post("https://total-data-feeds.herokuapp.com/pension/add-user", data)
       .then((response) => {
         //   console.log(response);
         setState(false);

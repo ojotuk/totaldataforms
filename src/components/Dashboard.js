@@ -27,7 +27,7 @@ const Dashboard = ({ setIslogged }) => {
     setState(true);
     setData(null);
     axios
-      .get("http://localhost:5000/widecat/get/tax", {
+      .get("https://total-data-feeds.herokuapp.com/widecat/get/tax", {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -56,7 +56,7 @@ const Dashboard = ({ setIslogged }) => {
     setState(true);
     setData(null);
     axios
-      .get("http://localhost:5000/widecat/get/pension", {
+      .get("https://total-data-feeds.herokuapp.com/widecat/get/pension", {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -85,7 +85,7 @@ const Dashboard = ({ setIslogged }) => {
     setState(true);
     setData(null);
     axios
-      .get("http://localhost:5000/widecat/get/nhf", {
+      .get("https://total-data-feeds.herokuapp.com/widecat/get/nhf", {
         headers: { "auth-token": token },
       })
       .then((response) => {

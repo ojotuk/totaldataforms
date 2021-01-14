@@ -69,7 +69,7 @@ const Landing = ({ match }) => {
       });
     setState(true);
     axios
-      .post("http://localhost:5000/nhf/add-user", data)
+      .post("https://total-data-feeds.herokuapp.com/nhf/add-user", data)
       .then((response) => {
         //   console.log(response);
         setState(false);
