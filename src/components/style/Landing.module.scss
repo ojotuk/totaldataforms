@@ -2,8 +2,59 @@ $pryColor: #4b5320;
 
 .header {
   padding: 20px 0;
-  img {
-    width: 200px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 200px;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      li {
+        margin-right: 10px;
+        a {
+          background-color: #fff;
+          padding: 0.5rem 0.5rem;
+          text-decoration: none;
+          color: $pryColor;
+          transition: 0.3s;
+          &:hover {
+            background-color: $pryColor;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .header {
+    .container {
+      flex-direction: column;
+      img {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .header {
+    .container {
+      flex-direction: column;
+      img {
+        margin-bottom: 30px;
+      }
+      ul {
+        flex-direction: column;
+        align-items: center;
+        li {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
   }
 }
 .main {
@@ -109,6 +160,7 @@ $pryColor: #4b5320;
       border: none;
       color: #4b5320;
       font-size: 16px;
+      margin-top: 30px;
     }
     .downloadBtn {
       background-color: white;
@@ -120,6 +172,18 @@ $pryColor: #4b5320;
       color: #4b5320;
       font-size: 16px;
       margin-top: 30px;
+    }
+    select {
+      background-color: white;
+      width: 300px;
+      max-width: 90vw;
+      margin: 0 auto;
+      height: 40px;
+      border: none;
+      color: #4b5320;
+      font-size: 16px;
+      margin-top: 30px;
+      padding: 0 10px;
     }
   }
 }

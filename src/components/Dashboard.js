@@ -14,14 +14,20 @@ const Dashboard = ({ setIslogged }) => {
     type: "",
   });
   const [state, setState] = useState(false);
+  const [action, setAction] = useState("none");
+
+  const handleActionChange = (e) => {
+    setData(null);
+    setAction(e.target.value);
+  };
   const today = new Date().toLocaleDateString();
-  const fileName = `Tax Card Updates ${today}`;
+  const fileName = `${action} Updates ${today}`;
   const token = sessionStorage.getItem("auth-token");
   const requesthandler = () => {
     setState(true);
     setData(null);
     axios
-      .get("https://total-data-feeds.herokuapp.com/widecat/get", {
+      .get("http://localhost:5000/widecat/get/tax", {
         headers: { "auth-token": token },
       })
       .then((response) => {
@@ -46,6 +52,80 @@ const Dashboard = ({ setIslogged }) => {
         });
       });
   };
+  const requestPensionhandler = () => {
+    setState(true);
+    setData(null);
+    axios
+      .get("http://localhost:5000/widecat/get/pension", {
+        headers: { "auth-token": token },
+      })
+      .then((response) => {
+        if (response.data.status === 200) {
+          setState(false);
+          if (response.data.doc.lenght === 0)
+            return setNotifyMsg({
+              state: true,
+              msg: "Submission is empty at this time",
+              type: "Error",
+            });
+          setData(response.data.doc);
+        }
+        // console.log(response);
+      })
+      .catch(() => {
+        setState(false);
+        setNotifyMsg({
+          state: true,
+          msg: "Error occured",
+          type: "Error",
+        });
+      });
+  };
+  const requestNhfhandler = () => {
+    setState(true);
+    setData(null);
+    axios
+      .get("http://localhost:5000/widecat/get/nhf", {
+        headers: { "auth-token": token },
+      })
+      .then((response) => {
+        if (response.data.status === 200) {
+          setState(false);
+          if (response.data.doc.lenght === 0)
+            return setNotifyMsg({
+              state: true,
+              msg: "Submission is empty at this time",
+              type: "Error",
+            });
+          setData(response.data.doc);
+        }
+        // console.log(response);
+      })
+      .catch(() => {
+        setState(false);
+        setNotifyMsg({
+          state: true,
+          msg: "Error occured",
+          type: "Error",
+        });
+      });
+  };
+  const handleGetAction = () => {
+    setData(null);
+    switch (action) {
+      case "tax-card":
+        requesthandler();
+        break;
+      case "pension":
+        requestPensionhandler();
+        break;
+      case "nhf":
+        requestNhfhandler();
+        break;
+      default:
+        break;
+    }
+  };
   const logOut = () => {
     sessionStorage.clear();
     setIslogged(false);
@@ -62,9 +142,22 @@ const Dashboard = ({ setIslogged }) => {
         </div>
       </header>
       <section className={styles.downloadArea}>
-        <button className={"btn " + styles.requestBtn} onClick={requesthandler}>
-          Request Data
-        </button>
+        <select value={action} onChange={(e) => handleActionChange(e)}>
+          <option value="none">Select a request</option>
+          <option value="tax-card">Tax Card</option>
+          <option value="pension">Pension</option>
+          <option value="nhf">NHF</option>
+        </select>
+        {action === "tax-card" || action === "pension" || action === "nhf" ? (
+          <button
+            className={"btn " + styles.requestBtn}
+            onClick={handleGetAction}
+          >
+            Request Data
+          </button>
+        ) : (
+          ""
+        )}
         {data ? (
           <div className={styles.downloadBtn}>
             <ExportCSV csvData={data} fileName={fileName}></ExportCSV>

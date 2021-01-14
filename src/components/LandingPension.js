@@ -4,7 +4,6 @@ import logo from "./style/total data logo.webp";
 import axios from "axios";
 import Notification from "./Notification";
 import Loader from "./Loader";
-// import { Link } from "react-router-dom";
 import Nav from "./Nav";
 const Landing = ({ match }) => {
   const path = match.path;
@@ -15,6 +14,7 @@ const Landing = ({ match }) => {
     phone: "",
     email: "",
     payerId: "",
+    pfa: "",
   });
   const [notificationMsg, setNotifyMsg] = useState({
     msg: "",
@@ -40,6 +40,9 @@ const Landing = ({ match }) => {
       case "payerId":
         setInput({ ...inputs, payerId: e.target.value });
         break;
+      case "pfa":
+        setInput({ ...inputs, pfa: e.target.value });
+        break;
 
       default:
         break;
@@ -51,9 +54,16 @@ const Landing = ({ match }) => {
       fullName: inputs.fullName.trim(),
       email: inputs.email.trim(),
       phone: inputs.phone.trim(),
-      taxPayerId: inputs.payerId.trim(),
+      pensionId: inputs.payerId.trim(),
+      pfa: inputs.pfa.trim(),
     };
-    if (!inputs.fullName || !inputs.email || !inputs.phone || !inputs.payerId)
+    if (
+      !inputs.fullName ||
+      !inputs.email ||
+      !inputs.phone ||
+      !inputs.payerId ||
+      !inputs.pfa
+    )
       return setNotifyMsg({
         state: true,
         msg: "Please fill all required field",
@@ -70,8 +80,9 @@ const Landing = ({ match }) => {
         type: "Error",
       });
     setState(true);
+    // https://total-data-feeds.herokuapp.com
     axios
-      .post("https://total-data-feeds.herokuapp.com/feedback", data)
+      .post("http://localhost:5000/pension/add-user", data)
       .then((response) => {
         //   console.log(response);
         setState(false);
@@ -96,6 +107,7 @@ const Landing = ({ match }) => {
             phone: "",
             email: "",
             payerId: "",
+            pfa: "",
           });
         } else {
           setNotifyMsg({
@@ -121,7 +133,7 @@ const Landing = ({ match }) => {
       <main className={styles.main}>
         <div className={"container"}>
           <div className={styles.title + " text-center"}>
-            <h1>Total Data Employee Tax Card Update</h1>
+            <h1>Total Data Employee Pension Record Update</h1>
             <p>Please fill the information below</p>
           </div>
           <div className={styles.formArea}>
@@ -171,17 +183,27 @@ const Landing = ({ match }) => {
                   <i className={"fa fa-id-card-o"}></i>
                   <input
                     type="text"
-                    placeholder="Payer Id (N-XXXXXXX)"
+                    placeholder="Pension Pin (PEN123456789000)"
                     value={inputs.payerId}
                     onChange={(e) => handleChange("payerId", e)}
-                    maxLength={10}
+                    maxLength={30}
+                  />
+                </div>
+                <div className={styles.item}>
+                  <i className={"fa fa-id-card-o"}></i>
+                  <input
+                    type="text"
+                    placeholder="Pension Fund Administrator"
+                    value={inputs.pfa}
+                    onChange={(e) => handleChange("pfa", e)}
+                    maxLength={30}
                   />
                 </div>
                 <div className={styles.item} onClick={handleSubmit}>
                   <i className={"fa fa-check"}></i>
                   <input type="submit" />
                 </div>
-                <div className={styles.download + " mt-3"}>
+                {/* <div className={styles.download + " mt-3"}>
                   <p>
                     No Tax Card ?{" "}
                     <a
@@ -194,7 +216,7 @@ const Landing = ({ match }) => {
                       </button>
                     </a>
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
