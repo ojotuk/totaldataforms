@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./style/Landing.module.css";
 import logo from "./style/total data logo.webp";
 
