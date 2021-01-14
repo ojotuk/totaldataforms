@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./style/Landing.module.css";
 // import logo from "./style/total data logo.webp";
 import axios from "axios";
 import Notification from "./Notification";
 import Loader from "./Loader";
 // import { Link } from "react-router-dom";
+import { fromBottom } from "./Animate";
 import Nav from "./Nav";
+
 const Landing = ({ match }) => {
   const path = match.path;
-
+  let main = useRef(null);
+  useEffect(() => {
+    fromBottom(main.current);
+  }, []);
   const [inputs, setInput] = useState({
     taxNo: "",
     fullName: "",
@@ -118,7 +123,7 @@ const Landing = ({ match }) => {
   return (
     <section>
       <Nav path={path} />
-      <main className={styles.main}>
+      <main className={styles.main} ref={main}>
         <div className={"container"}>
           <div className={styles.title + " text-center"}>
             <h1>Total Data Employee Tax Card Update</h1>
