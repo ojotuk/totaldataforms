@@ -6,6 +6,8 @@ import Notification from "./Notification";
 import Loader from "./Loader";
 import Nav from "./Nav";
 import { fromBottom } from "./Animate";
+
+// 
 const Landing = ({ match }) => {
   const path = match.path;
   let main = useRef(null);

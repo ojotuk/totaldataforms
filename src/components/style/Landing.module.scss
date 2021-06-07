@@ -2,16 +2,21 @@ $pryColor: #4b5320;
 
 .header {
   padding: 20px 0;
+  position: static;
+  // background-color: yellow;
   .container {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
+    // background-color: blue;
     img {
       width: 200px;
     }
-    ul {
+    .ul {
       list-style: none;
       display: flex;
+      // background-color: red;
+      width: 100% !important;
       li {
         margin-right: 10px;
         a {
@@ -20,6 +25,7 @@ $pryColor: #4b5320;
           text-decoration: none;
           color: $pryColor;
           transition: 0.3s;
+          // width: 300px;
           &:hover {
             background-color: $pryColor;
             color: #fff;
@@ -29,34 +35,17 @@ $pryColor: #4b5320;
     }
   }
 }
-@media screen and (max-width: 700px) {
-  .header {
-    .container {
-      flex-direction: column;
-      img {
-        margin-bottom: 30px;
-      }
-    }
-  }
-}
-@media screen and (max-width: 350px) {
-  .header {
-    .container {
-      flex-direction: column;
-      img {
-        margin-bottom: 30px;
-      }
-      ul {
-        flex-direction: column;
-        align-items: center;
-        li {
-          margin-right: 0;
-          margin-bottom: 20px;
-        }
-      }
-    }
-  }
-}
+// @media screen and (max-width: 700px) {
+//   .header {
+//     .container {
+//       flex-direction: column;
+//       img {
+//         margin-bottom: 30px;
+//       }
+//     }
+//   }
+// }
+
 .main {
   background-color: $pryColor;
   min-height: 100vh;
@@ -185,5 +174,34 @@ $pryColor: #4b5320;
       margin-top: 30px;
       padding: 0 10px;
     }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #fff;
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      img {
+        margin-bottom: 10px;
+      }
+      .ul {
+       display: none;
+        // min-height: 100vh;
+        li {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .main{
+    padding-top: 120px !important;
   }
 }

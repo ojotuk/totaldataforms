@@ -1,0 +1,35 @@
+.pdf-container {
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  overflow: auto !important;
+}
+.pages{
+  /* width: 200px; */
+  overflow: scroll;
+}
+.controls {
+  /* margin: 20px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.controls .btn-nxt{
+  background-color: green;
+  color: #fff;
+}
+.controls .btn-prev{
+  background-color: #ddd;
+  color: green;
+}
+.controls .btn{
+  width: 120px;
+}
+
+@media print {
+  .pdf-container {
+    display: none;
+  }
+}

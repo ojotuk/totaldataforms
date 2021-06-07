@@ -3,12 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { HashRouter as Router } from "react-router-dom";
-
+import {GlobalProvider} from "./GlobalStore/GlobalProvider"
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalProvider>
     <Router>
       <App />
     </Router>
-  </React.StrictMode>,
+    </GlobalProvider>
+  </React.StrictMode>
+  ,
   document.getElementById("root")
 );

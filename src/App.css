@@ -2,3 +2,27 @@
   background-color: #4b5320 !important;
   color: #fff !important;
 }
+.brand-logo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.btn-submit{
+background-color: #4b5320;
+color: #fff;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.mobile-nav{
+  background-color: #fff !important;
+}
+.pro-sidebar-inner{
+  background-color: #4b5320 !important;
+}
+.pro-icon-wrapper{
+  background-color: #fff !important;
+}
+.pro-sidebar-header{
+  background-color: #fff;
+}

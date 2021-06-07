@@ -1,14 +1,12 @@
 .header {
   padding: 20px 0;
+  position: static;
 }
 
 .header .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -18,18 +16,19 @@
   width: 200px;
 }
 
-.header .container ul {
+.header .container .ul {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100% !important;
 }
 
-.header .container ul li {
+.header .container .ul li {
   margin-right: 10px;
 }
 
-.header .container ul li a {
+.header .container .ul li a {
   background-color: #fff;
   padding: 0.5rem 0.5rem;
   text-decoration: none;
@@ -38,46 +37,9 @@
   transition: 0.3s;
 }
 
-.header .container ul li a:hover {
+.header .container .ul li a:hover {
   background-color: #4b5320;
   color: #fff;
-}
-
-@media screen and (max-width: 700px) {
-  .header .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .header .container img {
-    margin-bottom: 30px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .header .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .header .container img {
-    margin-bottom: 30px;
-  }
-  .header .container ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .header .container ul li {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
 }
 
 .main {
@@ -257,5 +219,38 @@
   font-size: 16px;
   margin-top: 30px;
   padding: 0 10px;
+}
+
+@media screen and (max-width: 990px) {
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #fff;
+  }
+  .header .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    position: relative;
+  }
+  .header .container img {
+    margin-bottom: 10px;
+  }
+  .header .container .ul {
+    display: none;
+  }
+  .header .container .ul li {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .main {
+    padding-top: 120px !important;
+  }
 }
 /*# sourceMappingURL=Landing.module.css.map */
