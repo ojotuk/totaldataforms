@@ -1,4 +1,5 @@
 // import { button } from '@material-ui/core'
+import axios from "axios";
 import React, { useRef, useContext } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import { GlobalContext } from "./../../GlobalStore/GlobalProvider";
@@ -17,6 +18,14 @@ export default function SignatureManager() {
 
   const handleSubmit=()=>{
       console.log(user)
+      axios.post('http://localhost:5000/commitment/form-new',user)
+      .then(res=>{
+          console.log(res)
+          if(res.data.code===201){
+              
+          }
+        })
+      .catch(e=>console.log(e))
   }
   return (
     <div className="containe">
