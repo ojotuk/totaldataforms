@@ -10,7 +10,7 @@ import { host } from "./../../hostEndpoint";
 
 export default function SignatureManager() {
   let sigCanvas = useRef(null);
-  const { user, ChangeTab, userInfoEditHandler } = useContext(GlobalContext);
+  const { user, userInfoEditHandler } = useContext(GlobalContext);
 
   const reset = () => {
     sigCanvas.clear();

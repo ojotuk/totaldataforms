@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState,useContext } from "react";
 import styles from "../style/Landing.module.css";
-// import logo from "./style/total data logo.webp";
-import axios from "axios";
-import Notification from "../Notification";
-import Loader from "../Loader";
-import Nav from "../Nav";
+
 import { fromBottom } from "../Animate";
 import {GlobalContext} from '../../GlobalStore/GlobalProvider'
 import SignatureManager from "./SignatureManager";
@@ -12,27 +8,19 @@ import SignatureManager from "./SignatureManager";
 // 
 const Landing = () => {
   // const path = match.path;
-  const {user,ChangeTab,userInfoEditHandler} = useContext(GlobalContext);
+  const {user} = useContext(GlobalContext);
 
   let main = useRef(null);
   useEffect(() => {
     fromBottom(main.current);
   }, []);
   const [inputs, setInput] = useState({...user});
-  const [notificationMsg, setNotifyMsg] = useState({
-    msg: "",
-    state: false,
-    type: "",
-  });
-  const [state, setState] = useState(false);
+  
   const handleChange = (e) => {
     inputs[e.target.name]=e.target.value
         setInput({ ...inputs });
     }
-  const handleSubmit = () => {
-   userInfoEditHandler({...inputs})
-   ChangeTab(1)
-  };
+
   return (
     <section>
       <main className={styles.main} ref={main}>
@@ -116,11 +104,7 @@ const Landing = () => {
           </div>
         </div>
       </main>
-      <Notification
-        notificationMsg={notificationMsg}
-        setNotify={setNotifyMsg}
-      />
-      <Loader state={state} />
+     
     </section>
   );
 };

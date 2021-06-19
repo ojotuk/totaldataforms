@@ -1,11 +1,7 @@
-import React, { useEffect, useRef, useState,useContext } from "react";
-import styles from "../style/Landing.module.css";
-// import logo from "./style/total data logo.webp";
-import axios from "axios";
-import Notification from "../Notification";
-import Loader from "../Loader";
+import React, { useContext } from "react";
+
 import Nav from "../Nav";
-import { fromBottom } from "../Animate";
+// import { fromBottom } from "../Animate";
 import Form from "./Form"
 import Book from "./pdf/Index"
 import {GlobalContext} from './../../GlobalStore/GlobalProvider'
@@ -14,7 +10,7 @@ import Commitment from "./SignPage";
 // 
 const Index = ({ match }) => {
   const path = match.path;
-    const {user,tab} = useContext(GlobalContext);
+    const {tab} = useContext(GlobalContext);
     const handleDisplay = ()=>{
         switch (tab) {
             case 0:

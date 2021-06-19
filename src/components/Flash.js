@@ -1,4 +1,4 @@
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+import {NotificationManager} from 'react-notifications';
 
 
 // 
@@ -16,6 +16,8 @@ const Flash = (type,message,title,dismiss,callback) => {
         case 'error':
           NotificationManager.error(message,title,dismiss,callback?callback():null);
           break;
+          default:
+            break;
       }
   };
 

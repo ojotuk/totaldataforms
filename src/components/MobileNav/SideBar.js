@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useRef } from "react";
+import React from "react";
 import logo from "./../../components/style/total data logo.webp";
 
 // import { useRouter } from "next/router";
@@ -7,7 +7,6 @@ import {
   ProSidebar,
   Menu,
   MenuItem,
-  SubMenu,
   SidebarHeader,
   SidebarFooter,
   SidebarContent,
