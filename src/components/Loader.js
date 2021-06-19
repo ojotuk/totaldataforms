@@ -2,7 +2,7 @@ import React from "react";
 import loading from "./style/loading.gif";
 const styles = {
   show: {
-    minHeight: "100vh",
+    minHeight: "100%",
     width: "100vw",
     position: "fixed",
     top: "0",

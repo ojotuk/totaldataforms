@@ -10,6 +10,7 @@ import Form from "./Form"
 import Book from "./pdf/Index"
 import {GlobalContext} from './../../GlobalStore/GlobalProvider'
 import Commitment from "./SignPage";
+
 // 
 const Index = ({ match }) => {
   const path = match.path;

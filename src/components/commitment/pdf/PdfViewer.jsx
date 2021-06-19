@@ -49,8 +49,8 @@ const PdfViewer = ({ pdf }) => {
         <button className={pageNumber===numPages ? 'd-none ' : 'btn btn-nxt'} onClick={nextPage} disabled={pageNumber === numPages}>
           Next
         </button>
-        <button className={pageNumber!==numPages ? 'd-none ' : 'btn btn-nxt'} >
-          Back to form
+        <button className={pageNumber!==numPages ? 'd-none ' : 'btn btn-nxt'} onClick={()=>ChangeTab(2)} >
+          Sign form
         </button>
         </div>
         <div>
@@ -70,9 +70,9 @@ const PdfViewer = ({ pdf }) => {
       </Document>
       <div className="controls" >
         <div>
-        <button className={pageNumber!==numPages ? 'd-none ' : 'btn btn-nxt'}  onClick={()=>ChangeTab(2)}>
+        {/* <button className={pageNumber!==numPages ? 'd-none ' : 'btn btn-nxt'}  onClick={()=>ChangeTab(2)}>
           Sign form
-        </button>
+        </button> */}
         </div>
         <div>
         </div>

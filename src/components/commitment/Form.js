@@ -107,7 +107,7 @@ const Landing = () => {
                     placeholder="Phone Number"
                     value={inputs["Phone Number"]}
                     onChange={(e) => {
-                      if(isNaN(Number(e.target.value))){ return}
+                      if(isNaN(Number(e.target.value)) || e.target.value.length > 11){ return}
                      else { handleChange(e)}
                     }}
                     
