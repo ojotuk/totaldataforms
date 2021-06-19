@@ -4,6 +4,9 @@ import logo from "./style/total data logo.webp";
 import axios from "axios";
 import Notification from "./Notification";
 import Loader from "./Loader";
+import {host} from './../hostEndpoint';
+
+
 const Landing = ({ setIslogged }) => {
   const [inputs, setInput] = useState({
     taxNo: "",
@@ -41,7 +44,7 @@ const Landing = ({ setIslogged }) => {
       });
     setState(true);
     axios
-      .post("https://total-data-feeds.herokuapp.com/widecat/login", data)
+      .post(`${host}/widecat/login`, data)
       .then((response) => {
         // console.log(response);
         setState(false);
