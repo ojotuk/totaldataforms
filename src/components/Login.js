@@ -7,7 +7,7 @@ import Loader from "./Loader";
 import {host} from './../hostEndpoint';
 
 
-const Landing = ({ setIslogged }) => {
+const Landing = () => {
   const [inputs, setInput] = useState({
     taxNo: "",
     fullName: "",
@@ -46,16 +46,10 @@ const Landing = ({ setIslogged }) => {
     axios
       .post(`${host}/widecat/login`, data)
       .then((response) => {
-        // console.log(response);
+        // console.log(response.data);
         setState(false);
         if (response.data.status === 200) {
           sessionStorage.setItem("auth-token", response.data.token);
-          setState(false);
-          setNotifyMsg({
-            state: true,
-            msg: "Logged In",
-            type: "Success",
-          });
           setInput({
             taxNo: "",
             fullName: "",
@@ -63,7 +57,8 @@ const Landing = ({ setIslogged }) => {
             email: "",
             payerId: "",
           });
-          setIslogged(true);
+         
+         return window.location.assign('/admin')
         } else {
           setNotifyMsg({
             state: true,
@@ -72,6 +67,7 @@ const Landing = ({ setIslogged }) => {
           });
           setState(false);
         }
+        return
       })
       .catch((e) => {
         setNotifyMsg({

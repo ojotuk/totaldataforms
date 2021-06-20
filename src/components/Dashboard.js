@@ -6,7 +6,9 @@ import axios from "axios";
 import Notification from "./Notification";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
-const Dashboard = ({ setIslogged }) => {
+
+
+const Dashboard = () => {
   const [data, setData] = useState(null);
   const [notificationMsg, setNotifyMsg] = useState({
     msg: "",
@@ -128,20 +130,27 @@ const Dashboard = ({ setIslogged }) => {
   };
   const logOut = () => {
     sessionStorage.clear();
-    setIslogged(false);
+    window.location.href='/panel'
   };
   return (
     <div className={styles.admin}>
       <header className={styles.header}>
         <div className={"container " + styles.container}>
           <Link to="/">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" width='100px'/>
           </Link>
 
           <button onClick={logOut}>LogOut</button>
         </div>
       </header>
+      
       <section className={styles.downloadArea}>
+        <div className='container'>
+        <div className={styles.reques}>
+          <Link to="/admin/applications?q=commitment-forms"><button>Commitment Form</button></Link>
+        </div>
+        </div>
+      
         <select value={action} onChange={(e) => handleActionChange(e)}>
           <option value="none">Select a request</option>
           <option value="tax-card">Tax Card</option>

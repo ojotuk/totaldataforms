@@ -2,17 +2,13 @@ import React, { createContext, useReducer } from "react";
 import AppReducer from "./Reducer";
 import axios from 'axios'
 import {host} from './../hostEndpoint'
-// 
-let logState;
-if (typeof window !== "undefined") {
-  logState = sessionStorage.getItem("logged");
-}
+
 // token
 const token = sessionStorage.getItem("auth-token");
 
 //initial state
 let initialState = {
-  islogged: logState,
+  islogged: token ? true : false,
   user: {
     "Fullname": "",
     "Phone Number": "",
