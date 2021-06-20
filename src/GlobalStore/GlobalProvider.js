@@ -1,11 +1,15 @@
 import React, { createContext, useReducer } from "react";
 import AppReducer from "./Reducer";
-
+import axios from 'axios'
+import {host} from './../hostEndpoint'
+// 
 let logState;
 if (typeof window !== "undefined") {
   logState = sessionStorage.getItem("logged");
 }
-// console.log(logState);
+// token
+const token = sessionStorage.getItem("auth-token");
+
 //initial state
 let initialState = {
   islogged: logState,
@@ -24,6 +28,7 @@ let initialState = {
     type: "",
     msg: "",
   },
+  "commitment-forms":[]
 };
 
 //globalContext
@@ -56,6 +61,17 @@ export const GlobalProvider = ({ children }) => {
     });
   };
 
+  const getApplications = async (data)=>{
+    const response = await axios.get(`${host}/widecat/get/${data.q}`,{
+      headers: { "auth-token": token },
+    });
+    dispatch({
+      type:"APPLICATION-FORMS",
+      payload:{data:response.data.all,field:data.q}
+    })
+  // console.log(response.data)
+  }
+
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   return (
@@ -68,7 +84,10 @@ export const GlobalProvider = ({ children }) => {
         userInfoEditHandler: userInfoEditHandler,
         notificationMsg: state.notificationMsg,
         ChangeTab: ChangeTab,
-        tab:state.tab
+        tab:state.tab,
+        getData:getApplications,
+  "commitment-forms":state["commitment-forms"]
+
       }}
     >
       {children}

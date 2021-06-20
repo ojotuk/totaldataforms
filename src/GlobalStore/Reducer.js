@@ -21,6 +21,11 @@ const AppReducer = (state, action) => {
         ...state,
         tab: action.payload,
       };
+      case "APPLICATION-FORMS":
+        return{
+          ...state,
+          [action.payload.field]:action.payload.data
+        }
     default:
       return state;
   }
