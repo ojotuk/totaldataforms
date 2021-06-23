@@ -30,7 +30,7 @@ const Nav = ({ path }) => {
               <Link to="/nhf">NHF Update</Link>
             </li>
             <li className={path === "/commitment" ? "active" : ""}>
-              <Link to="/commitment">Employee Handbook</Link>
+              <Link to="/commitment">Employee Handbook Commitment Form</Link>
             </li>
           </ul>
         </div>
