@@ -52,7 +52,7 @@ export default function SideBar({ navToggle, setNavToggle }) {
         </Menu>
         <Menu iconShape="round">
           <MenuItem icon={<i className="fa fa-arrow-right"></i>}>
-            <Link to="/commitment">Commitment</Link>
+            <Link to="/commitment">Employee Handbook Commitment Form</Link>
           </MenuItem>
         </Menu>
       </SidebarContent>

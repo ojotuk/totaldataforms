@@ -16,7 +16,7 @@ const Nav = ({ path }) => {
             <img src={logo} alt="logo" />
           </a>
           <div className='menu-ba'>
-          <span className='d-lg-none' onClick={()=>setNavToggle(!navToggle)}><i className='fa fa-bars'></i></span>
+          <span className='d-lg-none' onClick={()=>setNavToggle(!navToggle)}><i className='fa fa-bars' style={{fontSize:'18px'}}></i></span>
           </div>
           </div>
           <ul className={styles.ul}>
@@ -29,7 +29,7 @@ const Nav = ({ path }) => {
             <li className={path === "/nhf" ? "active" : ""}>
               <Link to="/nhf">NHF Update</Link>
             </li>
-            <li className={path === "/commitment" ? "active" : ""}>
+            <li className={path === "/commitment" ? "active" : ""} >
               <Link to="/commitment">Employee Handbook Commitment Form</Link>
             </li>
           </ul>

@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
 }
 .btn-submit{
 background-color: #4b5320;
@@ -27,4 +27,10 @@ padding-bottom: 10px;
 }
 .pro-sidebar-header{
   background-color: #fff;
+}
+
+@media screen and (max-width:990px) {
+  .brand-logo{
+    width: 100%;
+  }
 }
